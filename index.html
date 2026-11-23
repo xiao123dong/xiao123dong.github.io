@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>晓东的个人主页</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    background: linear-gradient(160deg, #1a2a6c 0%, #2a4d8f 55%, #3f7fbf 100%);
+    min-height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 20px 32px;
+  }
+  .card {
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 20px;
+    padding: 40px 36px;
+    max-width: 560px;
+    width: 100%;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+  }
+  .avatar {
+    width: 84px; height: 84px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.18);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 38px; font-weight: 700;
+    border: 2px solid rgba(255,255,255,0.4);
+  }
+  h1 { font-size: 28px; margin-bottom: 10px; letter-spacing: 2px; }
+  .sub { font-size: 15px; opacity: 0.85; line-height: 1.8; }
+  .divider { height: 1px; background: rgba(255,255,255,0.25); margin: 26px 0; }
+  .info { font-size: 14px; line-height: 2.1; opacity: 0.92; text-align: left; }
+  .info b { display: inline-block; width: 76px; opacity: 0.75; font-weight: 500; }
+  .clock { margin-top: 26px; font-size: 15px; opacity: 0.9; }
+  .clock span { font-size: 22px; font-weight: 600; letter-spacing: 1px; }
+  footer { margin-top: 30px; font-size: 12px; opacity: 0.55; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="avatar">晓</div>
+    <h1>晓东的个人主页</h1>
+    <p class="sub">欢迎来到我的小站。<br>这里是我学习网络技术、记录生活点滴的地方。</p>
+    <div class="divider"></div>
+    <div class="info">
+      <div><b>站长</b>晓东</div>
+      <div><b>所在地</b>吉林 · 四平</div>
+      <div><b>兴趣</b>网络技术、古典诗词、短视频创作</div>
+      <div><b>本站域名</b>xiaodongj998.hidns.cc</div>
+    </div>
+    <div class="clock">现在是<br><span id="now">--</span></div>
+  </div>
+  <footer>© 2026 晓东 · 本站为个人学习使用</footer>
+<script>
+  function tick() {
+    var d = new Date();
+    function p(n){ return (n<10?'0':'')+n; }
+    document.getElementById('now').textContent =
+      d.getFullYear() + '年' + (d.getMonth()+1) + '月' + d.getDate() + '日 ' +
+      p(d.getHours()) + ':' + p(d.getMinutes()) + ':' + p(d.getSeconds());
+  }
+  tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
